@@ -5,8 +5,38 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Fitness.Views"
              mc:Ignorable="d" 
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Border
+                Background="#200F53"
+                CornerRadius="10" 
+                Padding="10" Margin="0,0,585,340"></Border>
+        <Border
+         Background="#200F53"
+         CornerRadius="10" 
+         Padding="10" Margin="270,323,315,17"></Border>
+        <Border
+         Background="#200F53"
+         CornerRadius="10" 
+         Padding="10" Margin="0,170,585,170"></Border>
+        <Border
+         Background="#200F53"
+         CornerRadius="10" 
+         Padding="10" Margin="270,170,315,170"></Border>
+        <Border
+         Background="#200F53"
+         CornerRadius="10" 
+         Padding="10" Margin="270,0,315,340"></Border>
+        <Border
+            Background="#200F53"
+            CornerRadius="10" 
+            Padding="10" Margin="551,170,34,170"/>
+        <Border
+            Background="#200F53"
+            CornerRadius="10" 
+            Padding="10" Margin="551,0,34,340"/>
+
     </Grid>
 </UserControl>
+

@@ -12,10 +12,7 @@ namespace DDX_Fitness.Repository
 {
     public class UserRepository : RepositoryBase, IUserRepository
     {
-        public void Add(UserModel userModel)
-        {
-            throw new NotImplementedException();
-        }
+     
 
         public bool AuthenticateUser(NetworkCredential credential)
         {
@@ -32,11 +29,7 @@ namespace DDX_Fitness.Repository
             }
             return validUser;
         }
-
-        public void Edit(UserModel userModel)
-        {
-            throw new NotImplementedException();
-        }
+     
         public IEnumerable<UserModel> GetByAll()
         {
             throw new NotImplementedException();
@@ -73,10 +66,18 @@ namespace DDX_Fitness.Repository
             }
             return user;
         }
-
+        public void Add(UserModel userModel)
+        {
+            throw new NotImplementedException();
+        }
+        public void Edit(UserModel userModel)
+        {
+            throw new NotImplementedException();
+        }
         public void Remove(int id)
         {
             throw new NotImplementedException();
         }
     }
 }
+

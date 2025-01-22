@@ -9,14 +9,14 @@ namespace DDX_Fitness.Repository
 {
     public abstract class RepositoryBase
     {
-        private readonly string connectionString;
+        private readonly string _connectionString;
         public RepositoryBase()
         {
-            connectionString = "Server=DESKTOP-Q1VPJHS\\SQLEXPRESS; Database=MVVMDB; Integrated Security=true; trustservercertificate=True";
+            _connectionString = "Server=HOME-PC\\SQLEXPRESS; Database=MVVMLoginDb; Integrated Security=true";
         }
         protected SqlConnection GetConnection()
         {
-            return new SqlConnection(connectionString);
+            return new SqlConnection(_connectionString);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DDX_Fitness.Model;
 using DDX_Fitness.Repository;
+using DDX_Fitness.ViewModel;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace DDX_Fitness.ViewModel
+namespace Fitness.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
@@ -71,43 +72,29 @@ namespace DDX_Fitness.ViewModel
         }
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowCustomerViewCommand { get; }
-        public ICommand ShowOrderViewCommand { get; }
-        public ICommand ShowTransactionViewCommand { get; }
 
         public MainViewModel()
         {
             userRepository = new UserRepository();
             CurrentUserAccount = new UserAccountModel();
-            //ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
-            //ShowCustomerViewCommand = new ViewModelCommand(ExecuteShowCustomerViewCommand);
-            //ShowTransactionViewCommand = new ViewModelCommand(ExecuteOrderHomeViewCommand);
-            //ShowOrderViewCommand = new ViewModelCommand(ExecuteShowTransactionViewCommand);
+            ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
+            ShowCustomerViewCommand = new ViewModelCommand(ExecuteShowCustomerViewCommand);
             LoadCurrentUserData();
         }
-        //private void ExecuteShowCustomerViewCommand(object obj)
-        //{
-        //    CurrentChildView = new CustomerViewModel();
-        //    Caption = "Customers";
-        //    Icon = IconChar.UserGroup;
-        //}
-        //private void ExecuteShowHomeViewCommand(object obj)
-        //{
-        //    CurrentChildView = new HomeViewModel();
-        //    Caption = "Home";
-        //    Icon = IconChar.Home;
-        //}
-        //private void ExecuteOrderHomeViewCommand(object obj)
-        //{
-        //    CurrentChildView = new OrderViewModel();
-        //    Caption = "Orders";
-        //    Icon = IconChar.Truck;
-        //}
-        //private void ExecuteShowTransactionViewCommand(object obj)
-        //{
-        //    CurrentChildView = new TransactionViewModel();
-        //    Caption = "Transaction";
-        //    Icon = IconChar.ShoppingBag;
-        //}
+        private void ExecuteShowHomeViewCommand(object obj)
+        {
+            CurrentChildView = new HomeViewModel();
+            Caption = "Главное меню";
+            Icon = IconChar.Home;
+        }
+        private void ExecuteShowCustomerViewCommand(object obj)
+        {
+            CurrentChildView = new CustomerViewModel();
+            Caption = "Клиенты";
+            Icon = IconChar.UserGroup;
+        }
+
+
 
         private void LoadCurrentUserData()
         {
@@ -124,5 +111,6 @@ namespace DDX_Fitness.ViewModel
                 //Hide child views.
             }
         }
+
     }
 }

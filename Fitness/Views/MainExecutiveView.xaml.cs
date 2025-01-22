@@ -14,28 +14,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace DDX_Fitness.Views
+namespace Fitness.Views
 {
     /// <summary>
-    /// Логика взаимодействия для LoginView.xaml
+    /// Логика взаимодействия для MainExecutiveView.xaml
     /// </summary>
-    public partial class LoginView : Window
+    public partial class MainExecutiveView : Window
     {
-        public LoginView()
+        public MainExecutiveView()
         {
             InitializeComponent();
         }
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-                DragMove();
-        }
-
-
-        //private void btnLogin(object sender, RoutedEventArgs e) 
-        //{
-
-        //}
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void pnlControlBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

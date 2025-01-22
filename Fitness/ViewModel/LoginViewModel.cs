@@ -116,7 +116,7 @@ namespace DDX_Fitness.ViewModel
             }
             else
             {
-                ErrorMessage = "* Invalid username or password";
+                ErrorMessage = "* Неверный логин или пароль, попробуйте ещё раз.";
             }
         }
 
