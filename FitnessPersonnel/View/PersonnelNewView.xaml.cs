@@ -13,16 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-
-namespace Fitness.Views
+namespace FitnessPersonnel.View
 {
     /// <summary>
-    /// Логика взаимодействия для HomeView.xaml
+    /// Логика взаимодействия для PersonnelNewView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class PersonnelNewView : UserControl
     {
-        public HomeView()
+        public PersonnelNewView()
         {
             InitializeComponent();
         }

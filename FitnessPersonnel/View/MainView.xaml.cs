@@ -10,19 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-
-namespace Fitness.Views
+namespace FitnessPersonnel.View
 {
     /// <summary>
-    /// Логика взаимодействия для HomeView.xaml
+    /// Логика взаимодействия для MainView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class MainView : Window
     {
-        public HomeView()
+        public MainView()
         {
             InitializeComponent();
         }
