@@ -21,7 +21,7 @@
                         VerticalAlignment="Top"
                         Grid.Column="0">
                 <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
-                <TextBox Text="Search..."   
+                <TextBox Text="Поиск..."   
                     FontSize="13"
                          Height="24"
                            Width="300"
@@ -37,7 +37,7 @@
             </StackPanel>
             <Button Grid.Column="1"
                                                         
-                            Content="Search"                            
+                            Content="Поиск"                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"

@@ -25,7 +25,9 @@
         <Border Grid.Row="0" Grid.Column="0"
                 Background="#200F53"
                 CornerRadius="10" 
-                Padding="10"></Border>
+                Padding="10">
+            
+        </Border>
         <Border Grid.Row="0" Grid.Column="2"
         Background="#200F53"
         CornerRadius="10" 

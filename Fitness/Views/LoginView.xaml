@@ -51,11 +51,6 @@
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                     <GradientStop Color="#060531" Offset="0"/>
                     <GradientStop Color="#1B1448" Offset="1"/>
-                    <!--Серые-белые
-                    #535c69
-                    #f0f1f2
-                    #ecedef
-                    #b1b6bc-->
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -109,9 +104,6 @@
                             Grid.Row="1"
                             Orientation="Vertical"
                             Margin="500,129,10,10">
-
-                    <!--<Image Source="/Assets/Images/ddxlogo.png"
-                           Width="100" Height="100"/>-->
 
                     <TextBlock Text="DDX fitnes club"
                                Foreground="Orange"
