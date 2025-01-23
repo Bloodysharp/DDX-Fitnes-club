@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fitness.ViewModel
 {
-    public class CustomerViewModel : ViewModelBase
+    public class PersonnelViewModel : ViewModelBase
     {
-
     }
 }

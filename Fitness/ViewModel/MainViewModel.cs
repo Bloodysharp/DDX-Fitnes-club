@@ -72,6 +72,12 @@ namespace Fitness.ViewModel
         }
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowCustomerViewCommand { get; }
+        public ICommand ShowInventoryViewCommand { get; }
+        public ICommand ShowWorkoutViewCommand { get; }
+        public ICommand ShowPersonnelViewCommand { get; }
+        public ICommand ShowStatisticlViewCommand { get; }
+
+
 
         public MainViewModel()
         {
@@ -79,6 +85,10 @@ namespace Fitness.ViewModel
             CurrentUserAccount = new UserAccountModel();
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowCustomerViewCommand = new ViewModelCommand(ExecuteShowCustomerViewCommand);
+            ShowInventoryViewCommand = new ViewModelCommand(ExecuteShowInventoryViewCommand);
+            ShowWorkoutViewCommand = new ViewModelCommand(ExecuteShowWorkoutViewCommand);
+            ShowPersonnelViewCommand = new ViewModelCommand(ExecuteShowPersonnelViewCommand);
+            ShowStatisticlViewCommand = new ViewModelCommand(ExecuteShowStatisticlViewCommand);
             LoadCurrentUserData();
         }
         private void ExecuteShowHomeViewCommand(object obj)
@@ -91,6 +101,30 @@ namespace Fitness.ViewModel
         {
             CurrentChildView = new CustomerViewModel();
             Caption = "Клиенты";
+            Icon = IconChar.UserGroup;
+        }
+        private void ExecuteShowInventoryViewCommand(object obj)
+        {
+            CurrentChildView = new InventoryViewModel();
+            Caption = "Инвентарь";
+            Icon = IconChar.UserGroup;
+        }
+        private void ExecuteShowWorkoutViewCommand(object obj)
+        {
+            CurrentChildView = new WorkoutViewModel();
+            Caption = "Расписание тренировок";
+            Icon = IconChar.UserGroup;
+        }
+        private void ExecuteShowPersonnelViewCommand(object obj)
+        {
+            CurrentChildView = new PersonnelViewModel();
+            Caption = "Персонал";
+            Icon = IconChar.UserGroup;
+        }
+        private void ExecuteShowStatisticlViewCommand(object obj)
+        {
+            CurrentChildView = new StatisticViewModel();
+            Caption = "Статистика";
             Icon = IconChar.UserGroup;
         }
 
