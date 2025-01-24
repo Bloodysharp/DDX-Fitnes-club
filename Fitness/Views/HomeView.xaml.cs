@@ -1,4 +1,5 @@
-﻿using LiveCharts;
+﻿using Fitness.ViewModel;
+using LiveCharts;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,10 @@ namespace Fitness.Views
         public HomeView()
         {
             InitializeComponent();
+            var viewModel = new HomeViewModel();
+            this.DataContext = viewModel;
+
+          
         }
     }
 }

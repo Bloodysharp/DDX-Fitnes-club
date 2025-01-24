@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessPersonnel.View"
         xmlns:PasswordBox="clr-namespace:FitnessPersonnel.PasswordBox"
-        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:viewModel="clr-namespace:FitnessPersonnel.ViewModel"
         mc:Ignorable="d"
         Title="LoginView" 
         Height="525" Width="900"

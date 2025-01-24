@@ -19,7 +19,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Top"
-                        Grid.Column="0">
+                        Grid.Column="0" Margin="0,0,130,0">
                 <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
                 <TextBox Text="Поиск..."   
                     FontSize="13"
@@ -36,8 +36,8 @@
                              Margin="5,5,0,0"></TextBox>
             </StackPanel>
             <Button Grid.Column="1"
-                                                        
-                            Content="Поиск"                            
+                                                                
+                            Content="Добавить"                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"

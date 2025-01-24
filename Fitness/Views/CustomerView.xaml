@@ -37,7 +37,7 @@
             </StackPanel>
             <Button Grid.Column="1"
                                                         
-                            Content="Поиск"                            
+                            Content="Добавить"                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
@@ -103,7 +103,7 @@
 
                                         <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
-
+                                    
                                     <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" >
                                         <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>

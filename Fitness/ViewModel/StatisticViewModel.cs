@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fitness.ViewModel
 {
-    public class StatisticViewModel : ViewModelBase
+    public class StatisticViewModel:ViewModelBase
     {
     }
 }

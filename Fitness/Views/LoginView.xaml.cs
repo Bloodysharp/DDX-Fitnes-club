@@ -30,12 +30,6 @@ namespace DDX_Fitness.Views
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
-
-
-        //private void btnLogin(object sender, RoutedEventArgs e) 
-        //{
-
-        //}
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void pnlControlBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
