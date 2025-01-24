@@ -72,7 +72,7 @@
                 Background="#200F53"
                 CornerRadius="10" 
                 Padding="10">
-            <DataGrid ColumnWidth="*" x:Name="PersonnelDG" AutoGenerateColumns="False"
+            <DataGrid ColumnWidth="*" x:Name="PersonnelDG" AutoGenerateColumns="False" RowStyle="{DynamicResource DataGridRowStyle1}"  CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}"
                   Background="#200F53"
                   BorderThickness="0">
                 <DataGrid.ColumnHeaderStyle>
