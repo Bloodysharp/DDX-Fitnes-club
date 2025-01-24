@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Fitness.Repository;
+using Fitness.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,13 @@ namespace Fitness.Views
         public CustomerView()
         {
             InitializeComponent();
+            LoadVisitorsData();
+        }
+        private void LoadVisitorsData()
+        {
+            var repository = new VisitorsRepository("Server=HOME-PC\\SQLEXPRESS; Database=FitnessGym; Integrated Security=true"); 
+            var visitors = repository.GetAllVisitors();
+            CustomersDG.ItemsSource = visitors;
         }
     }
 }

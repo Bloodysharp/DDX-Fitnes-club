@@ -72,7 +72,7 @@
                 Background="#200F53"
                 CornerRadius="10" 
                 Padding="10">
-            <DataGrid ColumnWidth="*"
+            <DataGrid ColumnWidth="*" x:Name="PersonnelDG" AutoGenerateColumns="False"
                   Background="#200F53"
                   BorderThickness="0">
                 <DataGrid.ColumnHeaderStyle>
@@ -85,13 +85,13 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="ФИО"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Почта"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Телефон"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Зарплата"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Стаж"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Специализация"/>
+                    <DataGridTextColumn Binding="{Binding ID}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
+                    <DataGridTextColumn Binding="{Binding FullName}" ClipboardContentBinding="{x:Null}" Header="ФИО"/>
+                    <DataGridTextColumn Binding="{Binding Email}" ClipboardContentBinding="{x:Null}" Header="Почта"/>
+                    <DataGridTextColumn Binding="{Binding PhoneNumber}" ClipboardContentBinding="{x:Null}" Header="Телефон"/>
+                    <DataGridTextColumn Binding="{Binding Salary}" ClipboardContentBinding="{x:Null}" Header="Зарплата"/>
+                    <DataGridTextColumn Binding="{Binding ExperienceYears}" ClipboardContentBinding="{x:Null}" Header="Стаж"/>
+                    <DataGridTextColumn Binding="{Binding Specialty}" ClipboardContentBinding="{x:Null}" Header="Специализация"/>
                     <DataGridTemplateColumn Header="Редактировать" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

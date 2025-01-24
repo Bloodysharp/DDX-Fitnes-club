@@ -1,6 +1,4 @@
-﻿using LiveCharts;
-using LiveCharts.Wpf;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,16 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-
 namespace Fitness.Views
 {
     /// <summary>
-    /// Логика взаимодействия для HomeView.xaml
+    /// Логика взаимодействия для DocumentView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class DocumentView : UserControl
     {
-        public HomeView()
+        public DocumentView()
         {
             InitializeComponent();
         }

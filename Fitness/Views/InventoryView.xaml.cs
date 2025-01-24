@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace Fitness.Views
         public InventoryView()
         {
             InitializeComponent();
+            LoadInventoryData();
+        }
+        private void LoadInventoryData()
+        {
+            var repository = new InventoryRepository("Server=HOME-PC\\SQLEXPRESS; Database=FitnessGym; Integrated Security=true"); 
+            var inventory = repository.GetAllInventory();
+            InventoryDG.ItemsSource = inventory;
         }
     }
 }

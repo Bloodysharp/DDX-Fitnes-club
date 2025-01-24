@@ -22,9 +22,9 @@ namespace DDX_Fitness.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select *from [User] where username=@username and [password]=@password";
+                command.CommandText = "select *from [Users] where username=@username and [passcode]=@passcode";
                 command.Parameters.Add("@username", SqlDbType.NVarChar).Value = credential.UserName;
-                command.Parameters.Add("@password", SqlDbType.NVarChar).Value = credential.Password;
+                command.Parameters.Add("@passcode", SqlDbType.NVarChar).Value = credential.Password;
                 validUser = command.ExecuteScalar() == null ? false : true;
             }
             return validUser;
@@ -46,7 +46,7 @@ namespace DDX_Fitness.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select *from [User] where username=@username";
+                command.CommandText = "select * from [Users] where username=@username";
                 command.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
                 using (var reader = command.ExecuteReader())
                 {
@@ -54,12 +54,14 @@ namespace DDX_Fitness.Repository
                     {
                         user = new UserModel()
                         {
-                            Id = reader[0].ToString(),
-                            Username = reader[1].ToString(),
-                            Password = string.Empty,
-                            Name = reader[3].ToString(),
-                            LastName = reader[4].ToString(),
-                            Email = reader[5].ToString(),
+                            Id = reader["ID"].ToString(),
+                            Username = reader["Username"].ToString(),
+                            Password = string.Empty, // Пропускаем пароль для безопасности
+                            FullName = reader["FullName"].ToString(),
+                            PhoneNumber = reader["PhoneNumber"].ToString(),
+                            Email = reader["Email"].ToString(),
+                            Salary = reader["Salary"].ToString(),
+                            Role = reader["Role"].ToString() // Добавляем роль
                         };
                     }
                 }

@@ -72,7 +72,7 @@
                 Background="#200F53"
                 CornerRadius="10" 
                 Padding="10">
-            <DataGrid ColumnWidth="*"
+            <DataGrid ColumnWidth="*" x:Name="WorkoutDG" AutoGenerateColumns="False"
                   Background="#200F53"
                   BorderThickness="0">
                 <DataGrid.ColumnHeaderStyle>
@@ -85,12 +85,12 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Наименование"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Дата начала"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Конец"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Общее время"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Тренер"/>
+                    <DataGridTextColumn Binding="{Binding ID}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
+                    <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Наименование"/>
+                    <DataGridTextColumn Binding="{Binding StartTime}" ClipboardContentBinding="{x:Null}" Header="Дата начала"/>
+                    <DataGridTextColumn Binding="{Binding EndTime}" ClipboardContentBinding="{x:Null}" Header="Конец"/>
+                    <DataGridTextColumn Binding="{Binding TotalTime}" ClipboardContentBinding="{x:Null}" Header="Общее время"/>
+                    <DataGridTextColumn Binding="{Binding TrainerFullName}" ClipboardContentBinding="{x:Null}" Header="Тренер"/>
                     <DataGridTemplateColumn Header="Редактировать" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

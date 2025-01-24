@@ -76,6 +76,7 @@ namespace Fitness.ViewModel
         public ICommand ShowWorkoutViewCommand { get; }
         public ICommand ShowPersonnelViewCommand { get; }
         public ICommand ShowStatisticlViewCommand { get; }
+        public ICommand ShowDocumentViewCommand { get; }
 
 
 
@@ -89,6 +90,7 @@ namespace Fitness.ViewModel
             ShowWorkoutViewCommand = new ViewModelCommand(ExecuteShowWorkoutViewCommand);
             ShowPersonnelViewCommand = new ViewModelCommand(ExecuteShowPersonnelViewCommand);
             ShowStatisticlViewCommand = new ViewModelCommand(ExecuteShowStatisticlViewCommand);
+            ShowDocumentViewCommand = new ViewModelCommand(ExecuteShowDocumentViewCommand);
             LoadCurrentUserData();
         }
         private void ExecuteShowHomeViewCommand(object obj)
@@ -127,7 +129,12 @@ namespace Fitness.ViewModel
             Caption = "Статистика";
             Icon = IconChar.UserGroup;
         }
-
+        private void ExecuteShowDocumentViewCommand(object obj)
+        {
+            CurrentChildView = new DocumentViewModel();
+            Caption = "Договор";
+            Icon = IconChar.UserGroup;
+        }
 
 
         private void LoadCurrentUserData()
@@ -135,8 +142,8 @@ namespace Fitness.ViewModel
             var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
             if (user != null)
             {
-                CurrentUserAccount.Username = user.Username;
-                CurrentUserAccount.DisplayName = $" {user.Name} {user.LastName} ";
+                CurrentUserAccount.Username = user.FullName;
+                CurrentUserAccount.DisplayName = $"Имя: {user.FullName}, Роль: {user.Role}";
                 CurrentUserAccount.ProfilePicture = null;
             }
             else

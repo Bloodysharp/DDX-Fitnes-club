@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace Fitness.Views
         public WorkoutView()
         {
             InitializeComponent();
+            LoadWorkoutData();
+        }
+        private void LoadWorkoutData()
+        {
+            var repository = new WorkoutRepository("Server=HOME-PC\\SQLEXPRESS; Database=FitnessGym; Integrated Security=true"); // Ваш класс для работы с базой
+            var workout = repository.GetAllWorkout();
+            WorkoutDG.ItemsSource = workout; // Устанавливаем источник данных для DataGrid
         }
     }
 }

@@ -21,6 +21,9 @@
         <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
             <local:HomeView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:DocumentViewModel}">
+            <local:DocumentView/>
+        </DataTemplate>
             
             <DataTemplate DataType="{x:Type viewModel:CustomerViewModel}">
                 <local:CustomerView/>
@@ -127,7 +130,16 @@
                                 <TextBlock Text="Расписание занятий" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
-                       
+                        <RadioButton Style="{StaticResource menuButton}"
+     Tag="{StaticResource color8}"
+                                     Command="{Binding ShowDocumentViewCommand}"
+     >
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="Dochub" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Договор" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+
                     </StackPanel>
                 </Border>
 

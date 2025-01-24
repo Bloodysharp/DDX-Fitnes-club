@@ -12,7 +12,7 @@ namespace DDX_Fitness.Repository
         private readonly string _connectionString;
         public RepositoryBase()
         {
-            _connectionString = "Server=HOME-PC\\SQLEXPRESS; Database=MVVMLoginDb; Integrated Security=true";
+            _connectionString = "Server=HOME-PC\\SQLEXPRESS; Database=FitnessGym; Integrated Security=true";
         }
         protected SqlConnection GetConnection()
         {

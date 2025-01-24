@@ -203,9 +203,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\InventoryModel.cs" />
+    <Compile Include="Model\PersonnelModel.cs" />
+    <Compile Include="Model\VisitorsModel.cs" />
+    <Compile Include="Model\WorkoutModel.cs" />
+    <Compile Include="Repository\InventoryRepository.cs" />
+    <Compile Include="Repository\PersonnelRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
     <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Repository\VisitorRepository.cs" />
+    <Compile Include="Repository\WorkoutRepository.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
+    <Compile Include="ViewModel\DocumentViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\InventoryViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -217,6 +226,9 @@
     <Compile Include="ViewModel\WorkoutViewModel.cs" />
     <Compile Include="Views\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentView.xaml.cs">
+      <DependentUpon>DocumentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -303,6 +315,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\CustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DocumentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

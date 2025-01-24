@@ -72,7 +72,7 @@
                 Background="#200F53"
                 CornerRadius="10" 
                 Padding="10">
-            <DataGrid ColumnWidth="*"
+            <DataGrid ColumnWidth="*" x:Name="InventoryDG" AutoGenerateColumns="False"
                   Background="#200F53"
                   BorderThickness="0">
                 <DataGrid.ColumnHeaderStyle>
@@ -85,12 +85,12 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Наименование"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Статус"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Кол-во"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="В ремонте"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
+                    <DataGridTextColumn Binding="{Binding ID}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
+                    <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Наименование"/>
+                    <DataGridTextColumn Binding="{Binding Status}" ClipboardContentBinding="{x:Null}" Header="Статус"/>
+                    <DataGridTextColumn Binding="{Binding Quantity}" ClipboardContentBinding="{x:Null}" Header="Кол-во"/>
+                    <DataGridTextColumn Binding="{Binding InRepair}" ClipboardContentBinding="{x:Null}" Header="В ремонте"/>
+                    <DataGridTextColumn Binding="{Binding Price}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
 
                     <DataGridTemplateColumn Header="Редактировать" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
