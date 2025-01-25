@@ -53,5 +53,6 @@ namespace Fitness.Repository
             }
             return inventory;
         }
+
     }
 }

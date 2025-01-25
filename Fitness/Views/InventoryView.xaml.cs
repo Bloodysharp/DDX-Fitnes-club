@@ -1,4 +1,6 @@
-﻿using Fitness.Repository;
+﻿using Fitness.Model;
+using Fitness.Repository;
+using Fitness.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,7 @@ namespace Fitness.Views
         {
             InitializeComponent();
             LoadInventoryData();
+            
         }
         private void LoadInventoryData()
         {
@@ -32,5 +35,12 @@ namespace Fitness.Views
             var inventory = repository.GetAllInventory();
             InventoryDG.ItemsSource = inventory;
         }
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+       
     }
 }

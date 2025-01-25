@@ -28,7 +28,9 @@
             Background="#200F53"
             CornerRadius="10" 
             Padding="10">
-          
+            <!--<lvc:CartesianChart Series="{Binding Series}"
+                                  XAxes="{Binding XAxes}">
+            </lvc:CartesianChart>-->
 
         </Border>
 

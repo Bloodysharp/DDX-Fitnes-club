@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Fitness.Views"
              mc:Ignorable="d" 
-             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:viewmodel="clr-namespace:Fitness.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:InventoryViewModel}"
              d:DesignHeight="450" d:DesignWidth="900">
     <Grid>
         <Grid.RowDefinitions>
@@ -73,7 +73,7 @@
                 Background="#200F53"
                 CornerRadius="10" 
                 Padding="10">
-            <DataGrid ColumnWidth="*" x:Name="InventoryDG"  RowStyle="{DynamicResource DataGridRowStyle1}"  AutoGenerateColumns="False" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}"
+            <DataGrid ColumnWidth="*" x:Name="InventoryDG" RowStyle="{DynamicResource DataGridRowStyle1}"  AutoGenerateColumns="False" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}"
                   Background="#200F53"
                   BorderThickness="0">
                 <DataGrid.ColumnHeaderStyle>
@@ -86,19 +86,19 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding ID}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
-                    <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Наименование"/>
-                    <DataGridTextColumn Binding="{Binding Status}" ClipboardContentBinding="{x:Null}" Header="Статус"/>
-                    <DataGridTextColumn Binding="{Binding Quantity}" ClipboardContentBinding="{x:Null}" Header="Кол-во"/>
-                    <DataGridTextColumn Binding="{Binding InRepair}" ClipboardContentBinding="{x:Null}" Header="В ремонте"/>
-                    <DataGridTextColumn Binding="{Binding Price}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
+                    <DataGridTextColumn Binding="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
+                    <DataGridTextColumn Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Наименование"/>
+                    <DataGridTextColumn Binding="{Binding Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Статус"/>
+                    <DataGridTextColumn Binding="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Кол-во"/>
+                    <DataGridTextColumn Binding="{Binding InRepair, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="В ремонте"/>
+                    <DataGridTextColumn Binding="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
 
                     <DataGridTemplateColumn Header="Редактировать" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource gridEditButton}">
-
+                                    <Button Style="{StaticResource gridEditButton}" Click="ButtonSave_Click">
+                                          
                                         <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
 

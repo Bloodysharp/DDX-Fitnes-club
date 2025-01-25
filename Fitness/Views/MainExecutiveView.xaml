@@ -245,6 +245,7 @@
                                  Margin="10,0,10,0">
                                     <Ellipse.Fill>
                                         <ImageBrush ImageSource="/Assets/Images/2.jpg"/>
+                                        <!--<ImageSource="{Binding CurrentUserAccount.ProfilePicture}"-->
                                     </Ellipse.Fill>
                                 </Ellipse>
                                 <Button Style="{StaticResource iconButton}"

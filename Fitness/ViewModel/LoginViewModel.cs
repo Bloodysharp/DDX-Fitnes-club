@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using DDX_Fitness.CustomControls.Notify;
+using System.Windows.Media;
 
 namespace DDX_Fitness.ViewModel
 {
@@ -113,6 +115,7 @@ namespace DDX_Fitness.ViewModel
                 Thread.CurrentPrincipal = new GenericPrincipal(
                     new GenericIdentity(Username), null);
                 IsViewVisible = false;
+                
             }
             else
             {
@@ -124,5 +127,6 @@ namespace DDX_Fitness.ViewModel
         {
             throw new NotImplementedException();
         }
+        
     }
 }

@@ -85,12 +85,12 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding ID}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
-                    <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Наименование"/>
-                    <DataGridTextColumn Binding="{Binding StartTime}" ClipboardContentBinding="{x:Null}" Header="Дата начала"/>
-                    <DataGridTextColumn Binding="{Binding EndTime}" ClipboardContentBinding="{x:Null}" Header="Конец"/>
-                    <DataGridTextColumn Binding="{Binding TotalTime}" ClipboardContentBinding="{x:Null}" Header="Общее время"/>
-                    <DataGridTextColumn Binding="{Binding TrainerFullName}" ClipboardContentBinding="{x:Null}" Header="Тренер"/>
+                    <DataGridTextColumn Binding="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
+                    <DataGridTextColumn Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Наименование"/>
+                    <DataGridTextColumn Binding="{Binding StartTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Дата начала"/>
+                    <DataGridTextColumn Binding="{Binding EndTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Конец"/>
+                    <DataGridTextColumn Binding="{Binding TotalTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Общее время"/>
+                    <DataGridTextColumn Binding="{Binding TrainerFullName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Тренер"/>
                     <DataGridTemplateColumn Header="Редактировать" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

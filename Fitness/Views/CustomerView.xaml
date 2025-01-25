@@ -85,15 +85,15 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding ID}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
-                    <DataGridTextColumn Binding="{Binding FullName}" ClipboardContentBinding="{x:Null}" Header="ФИО"/>
-                    <DataGridTextColumn Binding="{Binding Email}" ClipboardContentBinding="{x:Null}" Header="Почта"/>
-                    <DataGridTextColumn Binding="{Binding PhoneNumber}" ClipboardContentBinding="{x:Null}" Header="Телефон"/>
-                    <DataGridTextColumn Binding="{Binding SubscriptionType}" ClipboardContentBinding="{x:Null}" Header="Абонемент"/>
-                    <DataGridTextColumn Binding="{Binding SubscriptionStatus}" ClipboardContentBinding="{x:Null}" Header="Статус подписки"/>
-                    <DataGridTextColumn Binding="{Binding SubscriptionStart}" ClipboardContentBinding="{x:Null}" Header="От"/>
-                    <DataGridTextColumn Binding="{Binding SubscriptionEnd}" ClipboardContentBinding="{x:Null}" Header="До"/>
-                    <DataGridTextColumn Binding="{Binding SubscriptionPrice}" ClipboardContentBinding="{x:Null}" Header="Цена" Width="80"/>
+                    <DataGridTextColumn Binding="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="UID" HeaderStringFormat=""/>
+                    <DataGridTextColumn Binding="{Binding FullName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="ФИО"/>
+                    <DataGridTextColumn Binding="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Почта"/>
+                    <DataGridTextColumn Binding="{Binding PhoneNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Телефон"/>
+                    <DataGridTextColumn Binding="{Binding SubscriptionType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Абонемент"/>
+                    <DataGridTextColumn Binding="{Binding SubscriptionStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Статус подписки"/>
+                    <DataGridTextColumn Binding="{Binding SubscriptionStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="От"/>
+                    <DataGridTextColumn Binding="{Binding SubscriptionEnd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="До"/>
+                    <DataGridTextColumn Binding="{Binding SubscriptionPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Цена" Width="80"/>
 
                     <DataGridTemplateColumn Header="Редактировать" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>

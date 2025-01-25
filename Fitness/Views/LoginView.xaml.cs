@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDX_Fitness.CustomControls.Notify;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -55,5 +56,6 @@ namespace DDX_Fitness.Views
                 this.WindowState = WindowState.Maximized;
             else this.WindowState = WindowState.Normal;
         }
+
     }
 }

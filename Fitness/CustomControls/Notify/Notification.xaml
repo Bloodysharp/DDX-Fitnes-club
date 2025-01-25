@@ -122,10 +122,8 @@
 
                 <Image
                     x:Name="_Close"
-                    Width="30"
+                    Width="39"
                     Height="30"
-                    Margin="60 10 0 0"
-                    HorizontalAlignment="Right"
                     Cursor="Hand"
                     Source="/Assets/Images/Close_Icon.png"
                     Stretch="Fill"

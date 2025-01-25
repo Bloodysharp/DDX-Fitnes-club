@@ -14,7 +14,7 @@ namespace Fitness.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        //Fields
+       
         private UserAccountModel _currentUserAccount;
         private ViewModelBase _currentChildView;
         private string _caption;
@@ -143,8 +143,8 @@ namespace Fitness.ViewModel
             if (user != null)
             {
                 CurrentUserAccount.Username = user.FullName;
-                CurrentUserAccount.DisplayName = $"Имя: {user.FullName}, Роль: {user.Role}";
-                CurrentUserAccount.ProfilePicture = null;
+                CurrentUserAccount.DisplayName = $"ФИО: {user.FullName}, Роль: {user.Role}";
+                CurrentUserAccount.ProfilePicture = /*user.profilePics;*/ null;
             }
             else
             {

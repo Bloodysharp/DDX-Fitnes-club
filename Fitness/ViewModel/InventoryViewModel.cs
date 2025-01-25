@@ -5,9 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Fitness.ViewModel
 {
@@ -28,8 +30,8 @@ namespace Fitness.ViewModel
         public InventoryViewModel()
         {
             _repository = new InventoryRepository("Server=HOME-PC\\SQLEXPRESS; Database=FitnessGym; Integrated Security=true");
-
             LoadInventory();
+      
         }
 
         private void LoadInventory()
@@ -37,6 +39,7 @@ namespace Fitness.ViewModel
             var InventoryList = _repository.GetAllInventory();
             Inventory = new ObservableCollection<InventoryModel>(InventoryList);
         }
+       
     }
 }
 

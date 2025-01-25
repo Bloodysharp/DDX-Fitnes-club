@@ -7,6 +7,9 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace DDX_Fitness.Repository
 {
@@ -62,12 +65,28 @@ namespace DDX_Fitness.Repository
                             Email = reader["Email"].ToString(),
                             Salary = reader["Salary"].ToString(),
                             Role = reader["Role"].ToString() // Добавляем роль
+                            //profilePics = ConvertToImageSource((byte[])reader["profilePics"])
                         };
                     }
                 }
             }
             return user;
         }
+        //private ImageSource ConvertToImageSource(byte[] imageData)
+        //{
+        //    if (imageData == null || imageData.Length == 0)
+        //        return null;
+
+        //    using (var memoryStream = new MemoryStream(imageData))
+        //    {
+        //        var image = new BitmapImage();
+        //        image.BeginInit();
+        //        image.CacheOption = BitmapCacheOption.OnLoad;
+        //        image.StreamSource = memoryStream;
+        //        image.EndInit();
+        //        return image;
+        //    }
+        //}
         public void Add(UserModel userModel)
         {
             throw new NotImplementedException();

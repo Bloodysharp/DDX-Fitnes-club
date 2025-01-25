@@ -22,6 +22,7 @@
     </Window.DataContext>
 
     <Window.Resources>
+       
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
     </Window.Resources>
 
@@ -173,6 +174,7 @@
                                TextWrapping="Wrap"/>
 
                     <Button x:Name="btnLogin" 
+                   
                             Command="{Binding LoginCommand}"
                             BorderThickness="0"
                             Content="ВОЙТИ"
