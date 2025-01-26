@@ -33,5 +33,27 @@ namespace Fitness.Views
             var visitors = repository.GetAllVisitors();
             CustomersDG.ItemsSource = visitors;
         }
+
+        private void ButtonAddCustomers_Click(object sender, RoutedEventArgs e)
+        {
+            NewCustomerView AddNewCustomer = new NewCustomerView();
+            
+            AddNewCustomer.ShowDialog();
+        }
+        private void ButtonRemoveCustomers_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void ButtonEditCustomers_Click(object sender, RoutedEventArgs e)
+        {
+            EditCustomerView AddNewCustomer = new EditCustomerView();
+
+            AddNewCustomer.ShowDialog();
+        }
+
+        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

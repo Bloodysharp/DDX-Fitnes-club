@@ -36,8 +36,8 @@
                              Margin="5,5,0,0"></TextBox>
             </StackPanel>
             <Button Grid.Column="1"
-                                                        
-                            Content="Добавить"                            
+                            Click="ButtonSearch_Click"                            
+                            Content="Поиск"                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
@@ -99,12 +99,15 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource gridEditButton}">
-
+                                    <Button Style="{StaticResource gridEditButton}" Click="ButtonEditCustomers_Click">
+                                            
                                         <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
-                                    
-                                    <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" >
+                                    <Button Margin="5 0 0 0" Style="{StaticResource gridEditButton}" Click="ButtonAddCustomers_Click">
+
+                                        <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                    <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" Click="ButtonRemoveCustomers_Click">
                                         <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                 </StackPanel>

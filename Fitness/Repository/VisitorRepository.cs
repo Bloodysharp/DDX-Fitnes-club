@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Fitness.Repository
 {
     public class VisitorsRepository
@@ -54,10 +55,29 @@ namespace Fitness.Repository
             }
             return visitors;
         }
-
-        public static implicit operator VisitorsRepository(InventoryRepository v)
+        public void AddClient(VisitorsModel visitors)
         {
-            throw new NotImplementedException();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+
+                var query = @"INSERT INTO Visitors 
+                          (ID, Name, Email, PhoneNumber, SubscriptionType, SubscriptionStatus, StartDate, EndDate, Price)
+                          VALUES (@ID, @Name, @Email, @PhoneNumber, @SubscriptionType, @SubscriptionStatus, @SubscriptionStart, @SubscriptionEnd, @SubscriptionPrice)";
+
+                //connection.Execute(query, new
+                //{
+                //    visitors.ID,
+                //    visitors.FullName,
+                //    visitors.Email,
+                //    visitors.PhoneNumber,
+                //    visitors.SubscriptionType,
+                //    visitors.SubscriptionStatus,
+                //    StartDate = visitors.SubscriptionStart,
+                //    EndDate = visitors.SubscriptionEnd,
+                //    Price = visitors.SubscriptionPrice
+                //});
+            }
         }
     }
 }
