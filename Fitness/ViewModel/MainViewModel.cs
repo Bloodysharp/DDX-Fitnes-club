@@ -109,31 +109,31 @@ namespace Fitness.ViewModel
         {
             CurrentChildView = new InventoryViewModel();
             Caption = "Инвентарь";
-            Icon = IconChar.UserGroup;
+            Icon = IconChar.Dumbbell;
         }
         private void ExecuteShowWorkoutViewCommand(object obj)
         {
             CurrentChildView = new WorkoutViewModel();
             Caption = "Расписание тренировок";
-            Icon = IconChar.UserGroup;
+            Icon = IconChar.CalendarTimes;
         }
         private void ExecuteShowPersonnelViewCommand(object obj)
         {
             CurrentChildView = new PersonnelViewModel();
             Caption = "Персонал";
-            Icon = IconChar.UserGroup;
+            Icon = IconChar.UserTie;
         }
         private void ExecuteShowStatisticlViewCommand(object obj)
         {
             CurrentChildView = new StatisticViewModel();
             Caption = "Статистика";
-            Icon = IconChar.UserGroup;
+            Icon = IconChar.Wallet;
         }
         private void ExecuteShowDocumentViewCommand(object obj)
         {
             CurrentChildView = new DocumentViewModel();
             Caption = "Договор";
-            Icon = IconChar.UserGroup;
+            Icon = IconChar.Dochub;
         }
 
 

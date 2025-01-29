@@ -16,6 +16,6 @@ namespace DDX_Fitness.Model
         public string PhoneNumber {  get; set; }
         public string Salary { get; set; }
         public string Role { get; set; }
-        //public byte[] profilePics {  get; set; }
+        public byte[] profilePics { get; set; }
     }
 }

@@ -218,6 +218,39 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EntityFramework\DataModel\Equipment.cs">
+      <DependentUpon>FitnessGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataModel\FitnessGym.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FitnessGym.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataModel\FitnessGym.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FitnessGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataModel\FitnessGym.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FitnessGym.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataModel\Statts.cs">
+      <DependentUpon>FitnessGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataModel\Trainers.cs">
+      <DependentUpon>FitnessGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataModel\Users.cs">
+      <DependentUpon>FitnessGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataModel\Visitors.cs">
+      <DependentUpon>FitnessGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DataModel\Workouts.cs">
+      <DependentUpon>FitnessGym.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\InventoryModel.cs" />
     <Compile Include="Model\PersonnelModel.cs" />
     <Compile Include="Model\StatisticModel.cs" />
@@ -226,9 +259,13 @@
     <Compile Include="Repository\InventoryRepository.cs" />
     <Compile Include="Repository\PersonnelRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Repository\StatisticRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\VisitorRepository.cs" />
     <Compile Include="Repository\WorkoutRepository.cs" />
+    <Compile Include="ViewModel\AddInventoryView.cs" />
+    <Compile Include="ViewModel\AddPersonnelViewModel.cs" />
+    <Compile Include="ViewModel\AddWorkoutViewModel.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
     <Compile Include="ViewModel\DocumentViewModel.cs" />
     <Compile Include="ViewModel\EditCustomerViewModel.cs" />
@@ -242,14 +279,20 @@
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCommand.cs" />
     <Compile Include="ViewModel\WorkoutViewModel.cs" />
+    <Compile Include="Views\AddCustomerView.xaml.cs">
+      <DependentUpon>AddCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddInventoryView.xaml.cs">
+      <DependentUpon>AddInventoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPersonnelView.xaml.cs">
+      <DependentUpon>AddPersonnelView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DocumentView.xaml.cs">
       <DependentUpon>DocumentView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditCustomerView.xaml.cs">
-      <DependentUpon>EditCustomerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -266,9 +309,6 @@
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NewCustomerView.xaml.cs">
-      <DependentUpon>NewCustomerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PersonnelView.xaml.cs">
       <DependentUpon>PersonnelView.xaml</DependentUpon>
@@ -308,6 +348,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Assets\Fonts\Nevan.ttf" />
+    <EntityDeploy Include="EntityFramework\DataModel\FitnessGym.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FitnessGym.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityFramework\DataModel\FitnessGym.edmx.diagram">
+      <DependentUpon>FitnessGym.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -338,15 +385,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\AddCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddInventoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddPersonnelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DocumentView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\EditCustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -369,10 +424,6 @@
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\NewCustomerView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PersonnelView.xaml">
       <SubType>Designer</SubType>
@@ -419,6 +470,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\MainIcon\ddxlogo.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EntityFramework\DataModel\FitnessGym.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FitnessGym.edmx</DependentUpon>
+      <LastGenOutput>FitnessGym.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFramework\DataModel\FitnessGym.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FitnessGym.edmx</DependentUpon>
+      <LastGenOutput>FitnessGym.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

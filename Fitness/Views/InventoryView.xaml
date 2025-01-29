@@ -22,6 +22,7 @@
                         Grid.Column="0" Margin="0,0,127,0">
                 <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
                 <TextBox Text="Поиск..."   
+                         x:Name="FilterTextBox"
                     FontSize="13"
                          Height="24"
                            Width="300"
@@ -37,8 +38,8 @@
             </StackPanel>
 
             <Button Grid.Column="1"
-                                                        
-                            Content="Добавить"                            
+                                 Click="ButtonSearch_Click"                       
+                            Content="Поиск"                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
@@ -93,16 +94,16 @@
                     <DataGridTextColumn Binding="{Binding InRepair, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="В ремонте"/>
                     <DataGridTextColumn Binding="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
 
-                    <DataGridTemplateColumn Header="Редактировать" IsReadOnly="True" Width="auto">
+                    <DataGridTemplateColumn Header="Опции" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource gridEditButton}" Click="ButtonSave_Click">
-                                          
-                                        <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
-                                    </Button>
+                                   
+                                    <Button Margin="5 0 0 0" Style="{StaticResource gridEditButton}" Click="ButtonAddPersonnel_Click" >
 
-                                    <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" >
+                                        <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                    <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" Click="ButtonRemoveTrainers_Click" >
                                         <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                 </StackPanel>

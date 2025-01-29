@@ -47,23 +47,23 @@ namespace DDX_Fitness.CustomControls.Notify
 
         private void _Border_MouseLeave(object sender, MouseEventArgs e)
         {
-            Storyboard fadeOUt = (Storyboard)this.Resources["CloseButtonFadeOutAnimation"];
-            fadeOUt.Begin();
+            //Storyboard fadeOUt = (Storyboard)this.Resources["CloseButtonFadeOutAnimation"];
+            //fadeOUt.Begin();
         }
 
         private void _Border_MouseEnter(object sender, MouseEventArgs e)
         {
-            Storyboard fadeIn = (Storyboard)this.Resources["CloseButtonFadeInAnimation"];
-            fadeIn.Begin();
+            //Storyboard fadeIn = (Storyboard)this.Resources["CloseButtonFadeInAnimation"];
+            //fadeIn.Begin();
         }
 
-        private void _Close_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                this.Close();
-            }
-        }
+        //private void _Close_MouseDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    if (e.LeftButton == MouseButtonState.Pressed)
+        //    {
+        //        this.Close();
+        //    }
+        //}
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

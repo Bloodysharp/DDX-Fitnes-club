@@ -25,29 +25,73 @@
         <Border Grid.Row="0" Grid.Column="0"
                 Background="#200F53"
                 CornerRadius="10" 
-                Padding="10"></Border>
-        <Border Grid.Row="0" Grid.Column="2"
-        Background="#200F53"
-        CornerRadius="10" 
-        Padding="10">
-          
+                Padding="10" Grid.ColumnSpan="5">
+            <lvc:CartesianChart x:Name="pribil" Margin="10">
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="Месяц" Labels="{Binding Labels}">
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Stroke="Gray" />
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Значение (₽)" LabelFormatter="{Binding YFormatter}">
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Stroke="Gray" />
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+            </lvc:CartesianChart>
         </Border>
-        <Border Grid.Row="0" Grid.Column="4"
-        Background="#200F53"
-        CornerRadius="10" 
-        Padding="10"></Border>
         <Border Grid.Row="2" Grid.Column="0"
         Background="#200F53"
         CornerRadius="10" 
-        Padding="10"></Border>
-        <Border Grid.Row="2" Grid.Column="2"
+        Padding="10" Grid.ColumnSpan="5">
+            <lvc:CartesianChart x:Name="zp" Margin="10">
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="Месяц" Labels="{Binding Labels}">
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Stroke="Gray" />
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Значение (₽)" LabelFormatter="{Binding YFormatter}">
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Stroke="Gray" />
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+            </lvc:CartesianChart>
+        </Border>
+       
+        
+       
+    
+        <Border Grid.Row="4" Grid.Column="0"
         Background="#200F53"
         CornerRadius="10" 
-        Padding="10"></Border>
-        <Border Grid.Row="2" Grid.Column="4"
-        Background="#200F53"
-        CornerRadius="10" 
-        Padding="10"></Border>
+        Padding="10" Grid.ColumnSpan="5">
+            <lvc:CartesianChart x:Name="trati" Margin="10">
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="Месяц" Labels="{Binding Labels}">
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Stroke="Gray" />
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Значение (₽)" LabelFormatter="{Binding YFormatter}">
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Stroke="Gray" />
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+            </lvc:CartesianChart>
+        </Border>
 
     </Grid>
 </UserControl>

@@ -1,4 +1,4 @@
-﻿using Fitness.Repository;
+﻿using Fitness.EntityFramework.DataModel;
 using Fitness.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -29,31 +29,55 @@ namespace Fitness.Views
         }
         private void LoadVisitorsData()
         {
-            var repository = new VisitorsRepository("Server=HOME-PC\\SQLEXPRESS; Database=FitnessGym; Integrated Security=true"); 
-            var visitors = repository.GetAllVisitors();
-            CustomersDG.ItemsSource = visitors;
+            CustomersDG.ItemsSource = FitnessGymEntities.GetContext().Visitors.ToList();
+          
         }
 
         private void ButtonAddCustomers_Click(object sender, RoutedEventArgs e)
         {
-            NewCustomerView AddNewCustomer = new NewCustomerView();
+            AddCustomerView AddNewCustomer = new AddCustomerView((null)); 
             
+
             AddNewCustomer.ShowDialog();
+
         }
         private void ButtonRemoveCustomers_Click(object sender, RoutedEventArgs e)
         {
+            var selectedCustomer = CustomersDG.SelectedItems.Cast<Visitors>().ToList();
 
+            if (MessageBox.Show($"Удалить заявку?", "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    FitnessGymEntities.GetContext().Visitors.RemoveRange(selectedCustomer);
+                    FitnessGymEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Заявка удалена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    CustomersDG.ItemsSource = FitnessGymEntities.GetContext().Visitors.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
         private void ButtonEditCustomers_Click(object sender, RoutedEventArgs e)
         {
-            EditCustomerView AddNewCustomer = new EditCustomerView();
-
-            AddNewCustomer.ShowDialog();
+           
         }
 
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {
-            
+            using (var context = new FitnessGymEntities())
+            {
+                var searchText = FilterTextBox.Text; var customer = context.Visitors.Where(r =>
+                    r.FullName.Contains(searchText) ||
+                    r.Email.Contains(searchText) || r.PhoneNumber.Contains(searchText) ||
+                    r.SubscriptionType.Contains(searchText) || r.SubscriptionStatus.ToString().Contains(searchText)).ToList();
+                   
+                    
+                CustomersDG.ItemsSource = customer;
+            }
         }
     }
 }

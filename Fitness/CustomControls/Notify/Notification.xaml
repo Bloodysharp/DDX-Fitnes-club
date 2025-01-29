@@ -120,7 +120,7 @@
                         />
                 </StackPanel>
 
-                <Image
+                <!--<Image
                     x:Name="_Close"
                     Width="39"
                     Height="30"
@@ -129,7 +129,7 @@
                     Stretch="Fill"
                     MouseDown="_Close_MouseDown"
                     Opacity="0"
-                    />
+                    />-->
 
 
             </StackPanel>

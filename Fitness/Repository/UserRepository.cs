@@ -16,7 +16,6 @@ namespace DDX_Fitness.Repository
     public class UserRepository : RepositoryBase, IUserRepository
     {
      
-
         public bool AuthenticateUser(NetworkCredential credential)
         {
             bool validUser;

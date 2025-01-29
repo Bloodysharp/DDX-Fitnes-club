@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FitnessPersonnel.ViewModel
 {
-    internal class PersonnelNewViewModel
+    public class PersonnelNewViewModel : ViewModelBase
     {
     }
 }

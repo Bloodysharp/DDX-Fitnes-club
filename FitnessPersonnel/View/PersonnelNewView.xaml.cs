@@ -20,6 +20,7 @@ namespace FitnessPersonnel.View
     /// </summary>
     public partial class PersonnelNewView : UserControl
     {
+        private Visitors _EditVisitors = new Visitors();
         public PersonnelNewView()
         {
             InitializeComponent();

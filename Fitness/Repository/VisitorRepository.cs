@@ -1,4 +1,5 @@
-﻿using Fitness.Model;
+﻿using Fitness.EntityFramework.DataModel;
+using Fitness.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -25,59 +26,30 @@ namespace Fitness.Repository
 
         public List<VisitorsModel> GetAllVisitors()
         {
-            var visitors = new List<VisitorsModel>();
+            var visitorsList = new List<VisitorsModel>();
 
-            using (var connection = GetConnection())
-            using (var command = new SqlCommand())
+            using (var connection = new SqlConnection(_connectionString))
             {
-                connection.Open();
-                command.Connection = connection;
-                command.CommandText = "SELECT * FROM Visitors";
+                var query = "SELECT FullName, SubscriptionType, SubscriptionStatus, SubscriptionPrice FROM Visitors";
+                var command = new SqlCommand(query, connection);
 
+                connection.Open();
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        visitors.Add(new VisitorsModel
+                        visitorsList.Add(new VisitorsModel
                         {
-                            ID = Guid.Parse(reader["ID"].ToString()),
                             FullName = reader["FullName"].ToString(),
-                            Email = reader["Email"].ToString(),
-                            PhoneNumber = reader["PhoneNumber"].ToString(),
                             SubscriptionType = reader["SubscriptionType"].ToString(),
                             SubscriptionStatus = reader["SubscriptionStatus"].ToString(),
-                            SubscriptionStart = Convert.ToDateTime(reader["SubscriptionStart"]),
-                            SubscriptionEnd = Convert.ToDateTime(reader["SubscriptionEnd"]),
                             SubscriptionPrice = Convert.ToDecimal(reader["SubscriptionPrice"])
                         });
                     }
                 }
             }
-            return visitors;
-        }
-        public void AddClient(VisitorsModel visitors)
-        {
-            using (var connection = GetConnection())
-            {
-                connection.Open();
 
-                var query = @"INSERT INTO Visitors 
-                          (ID, Name, Email, PhoneNumber, SubscriptionType, SubscriptionStatus, StartDate, EndDate, Price)
-                          VALUES (@ID, @Name, @Email, @PhoneNumber, @SubscriptionType, @SubscriptionStatus, @SubscriptionStart, @SubscriptionEnd, @SubscriptionPrice)";
-
-                //connection.Execute(query, new
-                //{
-                //    visitors.ID,
-                //    visitors.FullName,
-                //    visitors.Email,
-                //    visitors.PhoneNumber,
-                //    visitors.SubscriptionType,
-                //    visitors.SubscriptionStatus,
-                //    StartDate = visitors.SubscriptionStart,
-                //    EndDate = visitors.SubscriptionEnd,
-                //    Price = visitors.SubscriptionPrice
-                //});
-            }
+            return visitorsList;
         }
     }
 }

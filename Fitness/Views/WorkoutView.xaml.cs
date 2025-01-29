@@ -1,4 +1,5 @@
-﻿using Fitness.Repository;
+﻿
+using Fitness.EntityFramework.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,9 +29,21 @@ namespace Fitness.Views
         }
         private void LoadWorkoutData()
         {
-            var repository = new WorkoutRepository("Server=HOME-PC\\SQLEXPRESS; Database=FitnessGym; Integrated Security=true"); // Ваш класс для работы с базой
-            var workout = repository.GetAllWorkout();
-            WorkoutDG.ItemsSource = workout; // Устанавливаем источник данных для DataGrid
+            WorkoutDG.ItemsSource = FitnessGymEntities.GetContext().Workouts.ToList();
+        }
+
+        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new FitnessGymEntities())
+            {
+                var searchText = FilterTextBox.Text; var customer = context.Workouts.Where(r =>
+                    r.Name.Contains(searchText) ||
+                    r.TrainerFullName.Contains(searchText) || r.StartTime.Contains(searchText) ||
+                    r.EndTime.Contains(searchText) || r.TotalTime.ToString().Contains(searchText)).ToList();
+
+
+                WorkoutDG.ItemsSource = customer;
+            }
         }
     }
 }

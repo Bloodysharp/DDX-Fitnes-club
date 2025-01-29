@@ -21,7 +21,8 @@
                         VerticalAlignment="Top"
                         Grid.Column="0">
                 <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
-                <TextBox Text="Поиск..."   
+                <TextBox Text="Поиск..."
+                         x:Name="FilterTextBox"
                     FontSize="13"
                          Height="24"
                            Width="300"
@@ -36,6 +37,7 @@
                              Margin="5,5,0,0"></TextBox>
             </StackPanel>
             <Button Grid.Column="1"
+                   
                             Click="ButtonSearch_Click"                            
                             Content="Поиск"                            
                             FontSize="12"
@@ -91,18 +93,15 @@
                     <DataGridTextColumn Binding="{Binding PhoneNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Телефон"/>
                     <DataGridTextColumn Binding="{Binding SubscriptionType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Абонемент"/>
                     <DataGridTextColumn Binding="{Binding SubscriptionStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Статус подписки"/>
-                    <DataGridTextColumn Binding="{Binding SubscriptionStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="От"/>
-                    <DataGridTextColumn Binding="{Binding SubscriptionEnd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="До"/>
+                    <DataGridTextColumn Binding="{Binding SubscriptionStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=dd.M.yyyy}" ClipboardContentBinding="{x:Null}" Header="От"/>
+                    <DataGridTextColumn Binding="{Binding SubscriptionEnd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=dd.M.yyyy}" ClipboardContentBinding="{x:Null}" Header="До"/>
                     <DataGridTextColumn Binding="{Binding SubscriptionPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Цена" Width="80"/>
 
-                    <DataGridTemplateColumn Header="Редактировать" IsReadOnly="True" Width="auto">
+                    <DataGridTemplateColumn Header="Опции" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource gridEditButton}" Click="ButtonEditCustomers_Click">
-                                            
-                                        <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
-                                    </Button>
+                                    
                                     <Button Margin="5 0 0 0" Style="{StaticResource gridEditButton}" Click="ButtonAddCustomers_Click">
 
                                         <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource gridButtonIcon}"/>

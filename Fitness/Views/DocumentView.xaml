@@ -5,38 +5,74 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Fitness.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="800">
 
     <Border 
     Background="#200F53"
     CornerRadius="10" 
     Padding="10">
         <StackPanel>
-            <TextBlock Foreground="White"  FontSize="13"
-            Text="ДОГОВОР СОГЛАШЕНИЯ
-Этот Договор (далее – «Договор») заключается между Фитнес-клубом «DDX» (далее – «Клуб») и Клиентом (далее – «Клиент»), который должен быть ознакомлен и подписан до посещения Клуба.
-1. Предмет Договора 1.1. Клуб предоставляет Клиенту возможность посещать тренировки, использовать оборудование и услуги Клуба в соответствии с условиями настоящего Договора.
-2. Права и обязанности Сторон 2.1. Клуб обязуется:
-• 2.1.1. Обеспечить чистоту, безопасность и сохранность оборудования.
-• 2.1.2. Обеспечить доступ к квалифицированным тренерам и инструкторам.
-2.2. Клиент обязуется:
-• 2.2.1. Соблюдать правила внутреннего распорядка Клуба.
-• 2.2.2. Бережно относиться к оборудованию и имуществу Клуба.
-• 2.2.3. Обращаться к тренерам за консультацией в случае неуверенности в правильности выполнения упражнений.
-3. Ответственность 3.1. Клуб не несет ответственность за получение Участником травм по причине нарушения инструкций или пользования оборудованием в непредусмотренных целях. 3.2. Клиент несет ответственность за ущерб имуществу Клуба, поврежденному по его вине.
-4. Платежи и возвраты 4.1. Оплата за услуги производится в соответствии с действующим прайс-листом Клуба. 4.2. Возврат денежных средств возможен только при наличии веских причин, согласованных с руководством Клуба.
-5. Разрешение споров 5.1. Все спорные вопросы решаются путем переговоров или в соответствии с действующим законодательством РФ.
-6. Дополнительные условия 6.1. Подписывая настоящий Договор, Клиент подтверждает, что ознакомлен с правилами Клуба и принимает их.
-                
-                
-Подпись:
-_____________________________"
-            
-            TextWrapping="Wrap"
-            HorizontalAlignment="Center"
-            TextAlignment="Center"
-            Width="536"
-            />
+            <TextBlock Foreground="White" FontSize="18" FontWeight="Bold" Text="ДОГОВОР СОГЛАШЕНИЯ" HorizontalAlignment="Center"/>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="0,10,0,0">
+                    Этот Договор (далее – «Договор») заключается между Фитнес-клубом «DDX» (далее – «Клуб») и Клиентом (далее – «Клиент»), который должен быть ознакомлен и подписан до посещения Клуба.
+            </TextBlock>
+
+            <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" Margin="10,10,0,0" Text="1. Предмет Договора"/>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="20,5,0,0">
+                    1.1. Клуб предоставляет Клиенту возможность посещать тренировки, использовать оборудование и услуги Клуба в соответствии с условиями настоящего Договора.
+            </TextBlock>
+
+            <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" Margin="10,10,0,0" Text="2. Права и обязанности Сторон"/>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="20,5,0,0">
+                    2.1. Клуб обязуется:
+            </TextBlock>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="40,5,0,0">
+                    • 2.1.1. Обеспечить чистоту, безопасность и сохранность оборудования.
+            </TextBlock>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="40,5,0,0">
+                    • 2.1.2. Обеспечить доступ к квалифицированным тренерам и инструкторам.
+            </TextBlock>
+
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="20,5,0,0">
+                    2.2. Клиент обязуется:
+            </TextBlock>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="40,5,0,0">
+                    • 2.2.1. Соблюдать правила внутреннего распорядка Клуба.
+            </TextBlock>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="40,5,0,0">
+                    • 2.2.2. Бережно относиться к оборудованию и имуществу Клуба.
+            </TextBlock>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="40,5,0,0">
+                    • 2.2.3. Обращаться к тренерам за консультацией в случае неуверенности в правильности выполнения упражнений.
+            </TextBlock>
+
+            <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" Margin="10,10,0,0" Text="3. Ответственность"/>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="20,5,0,0">
+                    3.1. Клуб не несет ответственность за получение Участником травм по причине нарушения инструкций или пользования оборудованием в непредусмотренных целях.
+            </TextBlock>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="20,5,0,0">
+                    3.2. Клиент несет ответственность за ущерб имуществу Клуба, поврежденному по его вине.
+            </TextBlock>
+
+            <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" Margin="10,10,0,0" Text="4. Платежи и возвраты"/>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="20,5,0,0">
+                    4.1. Оплата за услуги производится в соответствии с действующим прайс-листом Клуба.
+            </TextBlock>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="20,5,0,0">
+                    4.2. Возврат денежных средств возможен только при наличии веских причин, согласованных с руководством Клуба.
+            </TextBlock>
+
+            <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" Margin="10,10,0,0" Text="5. Разрешение споров"/>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="20,5,0,0">
+                    5.1. Все спорные вопросы решаются путем переговоров или в соответствии с действующим законодательством РФ.
+            </TextBlock>
+
+            <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" Margin="10,10,0,0" Text="6. Дополнительные условия"/>
+            <TextBlock Foreground="White" FontSize="13" TextWrapping="Wrap" Margin="20,5,0,0">
+                    6.1. Подписывая настоящий Договор, Клиент подтверждает, что ознакомлен с правилами Клуба и принимает их.
+            </TextBlock>
+
+            <TextBlock Foreground="White" FontSize="13" FontStyle="Italic" Margin="10,10,0,0" Text="Подпись: _____________________________"/>
         </StackPanel>
     </Border>
 </UserControl>

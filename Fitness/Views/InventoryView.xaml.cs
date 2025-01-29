@@ -1,5 +1,5 @@
-﻿using Fitness.Model;
-using Fitness.Repository;
+﻿
+using Fitness.EntityFramework.DataModel;
 using Fitness.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -26,21 +26,61 @@ namespace Fitness.Views
         public InventoryView()
         {
             InitializeComponent();
-            LoadInventoryData();
+            LoadEquipmentData();
             
         }
-        private void LoadInventoryData()
+        private void LoadEquipmentData()
         {
-            var repository = new InventoryRepository("Server=HOME-PC\\SQLEXPRESS; Database=FitnessGym; Integrated Security=true"); 
-            var inventory = repository.GetAllInventory();
-            InventoryDG.ItemsSource = inventory;
+            InventoryDG.ItemsSource = FitnessGymEntities.GetContext().Equipment.ToList();
         }
 
-        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        private void ButtonAddPersonnel_Click(object sender, RoutedEventArgs e)
         {
-           
+            AddInventoryView AddNewCustomer = new AddInventoryView((null));
+
+
+            AddNewCustomer.ShowDialog();
+
+        }
+        private void ButtonRemoveTrainers_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedCustomer = InventoryDG.SelectedItems.Cast<Equipment>().ToList();
+
+            if (MessageBox.Show($"Удалить заявку?", "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    FitnessGymEntities.GetContext().Equipment.RemoveRange(selectedCustomer);
+                    FitnessGymEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Заявка удалена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    InventoryDG.ItemsSource = FitnessGymEntities.GetContext().Equipment.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void ButtonEditCustomers_Click(object sender, RoutedEventArgs e)
+        {
+          
         }
 
-       
+        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new FitnessGymEntities())
+            {
+                var searchText = FilterTextBox.Text; var customer = context.Equipment.Where(r =>
+                    r.Name.Contains(searchText) ||
+                    r.Status.Contains(searchText) || r.InRepair.ToString().Contains(searchText) ||
+                    r.Quantity.ToString().Contains(searchText) || r.Price.ToString().Contains(searchText)).ToList();
+
+
+                InventoryDG.ItemsSource = customer;
+            }
+        }
+
+
     }
 }
