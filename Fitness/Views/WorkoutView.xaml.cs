@@ -38,8 +38,7 @@ namespace Fitness.Views
             {
                 var searchText = FilterTextBox.Text; var customer = context.Workouts.Where(r =>
                     r.Name.Contains(searchText) ||
-                    r.TrainerFullName.Contains(searchText) || r.StartTime.Contains(searchText) ||
-                    r.EndTime.Contains(searchText) || r.TotalTime.ToString().Contains(searchText)).ToList();
+                    r.TrainerFullName.Contains(searchText)  || r.TotalTime.ToString().Contains(searchText)).ToList();
 
 
                 WorkoutDG.ItemsSource = customer;
