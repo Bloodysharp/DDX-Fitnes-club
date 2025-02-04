@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness", "Fitness\Fitness.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessPersonnel", "FitnessPersonnel\FitnessPersonnel.csproj", "{F1819F4A-76E4-45CB-82D3-0315C1F92A8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDX_API", "DDX_API\DDX_API.csproj", "{C757AD50-2F5B-4CE1-8C50-77D8E9E4D7F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F1819F4A-76E4-45CB-82D3-0315C1F92A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1819F4A-76E4-45CB-82D3-0315C1F92A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1819F4A-76E4-45CB-82D3-0315C1F92A8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C757AD50-2F5B-4CE1-8C50-77D8E9E4D7F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C757AD50-2F5B-4CE1-8C50-77D8E9E4D7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C757AD50-2F5B-4CE1-8C50-77D8E9E4D7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C757AD50-2F5B-4CE1-8C50-77D8E9E4D7F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
