@@ -93,17 +93,12 @@
                     <DataGridTextColumn Binding="{Binding PhoneNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Телефон"/>
                     <DataGridTextColumn Binding="{Binding SubscriptionType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Абонемент"/>
                     <DataGridTextColumn Binding="{Binding SubscriptionStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Статус подписки"/>
-                    <DataGridTextColumn Binding="{Binding SubscriptionStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=dd.M.yyyy}" ClipboardContentBinding="{x:Null}" Header="От"/>
-                    <DataGridTextColumn Binding="{Binding SubscriptionEnd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=dd.M.yyyy}" ClipboardContentBinding="{x:Null}" Header="До"/>
                     <DataGridTextColumn Binding="{Binding SubscriptionPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Цена" Width="80"/>
-
                     <DataGridTemplateColumn Header="Опции" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    
                                     <Button Margin="5 0 0 0" Style="{StaticResource gridEditButton}" Click="ButtonAddCustomers_Click">
-
                                         <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                     <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" Click="ButtonRemoveCustomers_Click">
@@ -116,7 +111,6 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
-
     </Grid>
 </UserControl>
 

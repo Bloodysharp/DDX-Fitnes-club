@@ -13,8 +13,7 @@ namespace Fitness.ViewModel
 {
     public class InventoryViewModel : ViewModelBase, INotifyPropertyChanged
     {
-      
-       
+
     }
 }
 

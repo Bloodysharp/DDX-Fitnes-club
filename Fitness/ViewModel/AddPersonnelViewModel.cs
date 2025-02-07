@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Fitness.ViewModel
 {
-    public class AddPersonnelViewModel:ViewModelBase
+    public class AddPersonnelViewModel : ViewModelBase
     {
+
     }
 }

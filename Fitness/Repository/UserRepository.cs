@@ -71,21 +71,6 @@ namespace DDX_Fitness.Repository
             }
             return user;
         }
-        //private ImageSource ConvertToImageSource(byte[] imageData)
-        //{
-        //    if (imageData == null || imageData.Length == 0)
-        //        return null;
-
-        //    using (var memoryStream = new MemoryStream(imageData))
-        //    {
-        //        var image = new BitmapImage();
-        //        image.BeginInit();
-        //        image.CacheOption = BitmapCacheOption.OnLoad;
-        //        image.StreamSource = memoryStream;
-        //        image.EndInit();
-        //        return image;
-        //    }
-        //}
         public void Add(UserModel userModel)
         {
             throw new NotImplementedException();

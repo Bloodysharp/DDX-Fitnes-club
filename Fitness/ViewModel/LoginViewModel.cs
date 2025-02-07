@@ -82,7 +82,7 @@ namespace DDX_Fitness.ViewModel
             }
         }
 
-        //-> Commands
+        //-> команды логинвью
         public ICommand LoginCommand { get; }
         public ICommand RecoverPasswordCommand { get; }
         public ICommand ShowPasswordCommand { get; }
@@ -122,7 +122,7 @@ namespace DDX_Fitness.ViewModel
                 ErrorMessage = "* Неверный логин или пароль, попробуйте ещё раз.";
             }
         }
-
+        //лень делать
         private void ExecuteRecoverPassCommand(string username, string email)
         {
             throw new NotImplementedException();

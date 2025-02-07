@@ -23,7 +23,6 @@ namespace DDX_Fitness.CustomControls.PasswordBox
     {
         public static readonly DependencyProperty PasswordProperty =
             DependencyProperty.Register("Password", typeof(SecureString), typeof(PasswordBoxControl));
-
         public SecureString Password
         {
             get { return (SecureString)GetValue(PasswordProperty); }
@@ -35,7 +34,6 @@ namespace DDX_Fitness.CustomControls.PasswordBox
             txtPassword.PasswordChanged += OnPasswordChanged;
 
         }
-
         private void OnPasswordChanged(object sender, RoutedEventArgs e)
         {
             Password = txtPassword.SecurePassword;

@@ -9,11 +9,11 @@ namespace DDX_Fitness.ViewModel
 {
     public class ViewModelCommand : ICommand
     {
-        //Fields
+        //поля
         private readonly Action<object> _executeAction;
         private readonly Predicate<object> _canExecuteAction;
 
-        //Constructors
+        //конструкторы
         public ViewModelCommand(Action<object> executeAction)
         {
             _executeAction = executeAction;
@@ -26,14 +26,14 @@ namespace DDX_Fitness.ViewModel
             _canExecuteAction = canExecuteAction;
         }
 
-        //Events
+        //ивенты
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        //Methods
+        //методы
         public bool CanExecute(object parameter)
         {
             return _canExecuteAction == null ? true : _canExecuteAction(parameter);

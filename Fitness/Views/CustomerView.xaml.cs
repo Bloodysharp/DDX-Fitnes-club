@@ -74,8 +74,6 @@ namespace Fitness.Views
                     r.FullName.Contains(searchText) ||
                     r.Email.Contains(searchText) || r.PhoneNumber.Contains(searchText) ||
                     r.SubscriptionType.Contains(searchText) || r.SubscriptionStatus.ToString().Contains(searchText)).ToList();
-                   
-                    
                 CustomersDG.ItemsSource = customer;
             }
         }

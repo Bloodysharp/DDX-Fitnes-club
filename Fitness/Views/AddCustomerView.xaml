@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Views"
-         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-  mc:Ignorable="d"
-  Title="AddPersonnelView" Height="350" Width="660"
-   WindowStartupLocation="CenterScreen"
-  WindowStyle="None"
-  Background="Transparent"
-  AllowsTransparency="True">
-    <Window.Resources>
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d"
+        Title="AddPersonnelView" Height="350" Width="660"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+        <Window.Resources>
         <!--notify source-->
         <LinearGradientBrush x:Key="RedGradient" StartPoint="0,0" EndPoint="1,0">
             <GradientStop Offset="0" Color="#602D30" />
@@ -30,12 +30,9 @@
         </LinearGradientBrush>
     </Window.Resources>
     <Border CornerRadius="12">
-
-
         <Border CornerRadius="10"                    
             BorderThickness="2"
             Opacity="0.95">
-
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#462AD8" Offset="0"/>
@@ -43,29 +40,18 @@
                     <GradientStop Color="#8A16C1" Offset="1"/>
                 </LinearGradientBrush>
             </Border.BorderBrush>
-
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                     <GradientStop Color="#060531" Offset="0"/>
                     <GradientStop Color="#1B1448" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
-
-
-
                 <Grid Grid.Row="0">
-
-                    <Grid.ColumnDefinitions>
-
-
-                    </Grid.ColumnDefinitions>
-
                     <TextBlock Text="Добавьте нового клиента"
                                Foreground="DarkGray"
                                FontSize="10"
@@ -73,7 +59,6 @@
                                Grid.Column="0"
                                VerticalAlignment="Center"
                                Margin="10,0,435,0"/>
-
                     <StackPanel x:Name="pnlControlBar"
                     Grid.Row="0"
                     Orientation="Horizontal"
@@ -88,7 +73,6 @@
                     Click="btnClose_Click">
                             <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
                         </Button>
-
                         <Button x:Name="btnMinimize"
                     Style="{StaticResource controlButton}"
                     Tag="{StaticResource color8}"
@@ -103,22 +87,16 @@
                 <TextBox Text="{Binding PhoneNumber}"  x:Name="PhoneTxtBox"  HorizontalAlignment="Left" Margin="358,103,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="258" Height="20"/>
                 <ComboBox Text="{Binding SubscriptionType}"  x:Name="SBCTypeComboBox"  HorizontalAlignment="Left" Margin="358,133,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="258" Height="20"/>
                 <ComboBox  Text="{Binding SubscriptionStatus}" x:Name="SBCStatusComboBox" HorizontalAlignment="Left" Margin="358,163,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="258" Height="20"/>
-                <!--<DatePicker SelectedDate="{Binding SubscriptionStart}" x:Name="StartTxtBox" HorizontalAlignment="Left" Margin="358,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="258" Height="25"/>
-                <DatePicker  SelectedDate="{Binding SubscriptionEnd}" x:Name="EndtxtBox" HorizontalAlignment="Left" Margin="358,226,0,0" Grid.Row="1" VerticalAlignment="Top" Width="258" Height="28"/>-->
                 <TextBox Text="{Binding SubscriptionPrice}" x:Name="PricetxtBox" HorizontalAlignment="Left" Margin="358,196,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="258" Height="20"/>
                 <TextBox  Text="{Binding ID}" x:Name="IDtxtBox" HorizontalAlignment="Left" Margin="358,11,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="258" Height="20"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White" Margin="10,13,0,0" Grid.Row="1" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,196,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Цена абонемента" VerticalAlignment="Top" Width="133" Height="16"/>
-                <!--<TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,230,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Действует до" VerticalAlignment="Top" Width="133" Height="16"/>
-                <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,200,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Действует от" VerticalAlignment="Top" Width="133" Height="16"/>-->
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,166,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Статус подписки" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,135,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Тип подписки" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,105,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Номер телефона" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,75,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Почта" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,45,0,0" Grid.Row="1" TextWrapping="Wrap" Text="ФИО" VerticalAlignment="Top" Width="133" Height="16"/>
-
             </Grid>
-
         </Border>
     </Border>
 </Window>

@@ -12,7 +12,6 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
-
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
@@ -56,12 +55,10 @@
             </Border.BorderBrush>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <!--Navigation menu-->
                     <ColumnDefinition Width="250"/>
-                    <!--Content section-->
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <!--Navigation Menu-->
+                <!--Кнопки навигации-->
                 <Border CornerRadius="10,0,0,10"
                 Grid.Column="0">
                     <Border.Background>
@@ -71,12 +68,10 @@
                         </LinearGradientBrush>
                     </Border.Background>
                     <StackPanel>
-
-                        <!--Logo-->
+                        <!--лого-->
                         <StackPanel Orientation="Horizontal"
                             Height="35"
                             Margin="15,25,0,40">
-
                             <Image Source="/Assets/Images/ddxlogo.png" Height="30"/>
                             <TextBlock Text="DDX Fitnes club"
                                Foreground="{StaticResource titleColor2}"
@@ -86,8 +81,7 @@
                                VerticalAlignment="Center"
                                Margin="10,0,0,0"/>
                         </StackPanel>
-
-                        <!--Menu Buttons-->
+                        <!--кнопочки-->
                         <RadioButton Style="{StaticResource menuButton}"
                              Tag="{StaticResource color1}"
                              IsChecked="True"
@@ -98,42 +92,40 @@
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color2}"
-                             Command="{Binding ShowCustomerViewCommand}">
+                                     Tag="{StaticResource color2}"
+                                     Command="{Binding ShowCustomerViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="UserGroup" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Клиенты" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color3}"
-                             Command="{Binding ShowInventoryViewCommand}">
+                                     Tag="{StaticResource color3}"
+                                     Command="{Binding ShowInventoryViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Dumbbell" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Тренажеры / инвентарь" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color4}"
-                             Command="{Binding ShowPersonnelViewCommand}">
+                                     Tag="{StaticResource color4}"
+                                     Command="{Binding ShowPersonnelViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="UserTie" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Персонал" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
-     Tag="{StaticResource color5}"
-                                     Command="{Binding ShowWorkoutViewCommand}"
-    >
+                                     Tag="{StaticResource color5}"
+                                     Command="{Binding ShowWorkoutViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="CalendarTimes" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Расписание занятий" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
-     Tag="{StaticResource color6}"
-                                     Command="{Binding ShowStatisticlViewCommand}"
-    >
+                                     Tag="{StaticResource color6}"
+                                     Command="{Binding ShowStatisticlViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Wallet" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Статистика" Style="{StaticResource menuButtonText}"/>
@@ -141,9 +133,8 @@
                         </RadioButton>
 
                         <RadioButton Style="{StaticResource menuButton}"
-     Tag="{StaticResource color8}"
-                                     Command="{Binding ShowDocumentViewCommand}"
-     >
+                                     Tag="{StaticResource color8}"
+                                     Command="{Binding ShowDocumentViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Dochub" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Договор" Style="{StaticResource menuButtonText}"/>
@@ -151,8 +142,7 @@
                         </RadioButton>
                     </StackPanel>
                 </Border>
-
-                <!--Main Section-->
+                <!--мейн-->
                 <Border CornerRadius="0,10,10,0"
                 Grid.Column="1">
                     <Border.Background>
@@ -163,11 +153,8 @@
                     </Border.Background>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <!--Control bar-->
                             <RowDefinition Height="25"/>
-                            <!--Header / Caption-->
                             <RowDefinition Height="35"/>
-                            <!--Content section / Child views-->
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <StackPanel x:Name="pnlControlBar"
@@ -197,14 +184,12 @@
                                 <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
                             </Button>
                         </StackPanel>
-                        <!--Header / Caption-->
+                        <!--хидер-->
                         <Grid Grid.Row="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-
-                            <!--Caption-->
                             <StackPanel Grid.Column="0"
                                 Orientation="Horizontal"
                                 VerticalAlignment="Top" Margin="0,8,0,0">
@@ -213,7 +198,6 @@
                                       Width="20"
                                       Foreground="{StaticResource titleColor2}"
                                       Margin="35,0,10,0"/>
-
                                 <TextBlock Text="{Binding Caption}"
                                    Foreground="{StaticResource titleColor2}"
                                    FontSize="16"
@@ -221,8 +205,7 @@
                                    FontWeight="Medium"
                                    VerticalAlignment="Center"/>
                             </StackPanel>
-
-                            <!--User options-->
+                            <!--Юзер опции-->
                             <StackPanel Grid.Column="1"
                                 Orientation="Horizontal"
                                 FlowDirection="RightToLeft"
@@ -263,7 +246,7 @@
                             </StackPanel>
 
                         </Grid>
-                        <!--Content section / Child views-->
+                        <!--юзер контролер-->
                         <ContentControl Content="{Binding CurrentChildView}"
                                 Grid.Row="2"
                                 Margin="25"/>

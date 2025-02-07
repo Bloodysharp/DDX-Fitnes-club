@@ -13,12 +13,10 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
-
-    <Window.DataContext>
-        <viewModel:MainViewModel/>
-    </Window.DataContext>
-    <Window.Resources>
-
+        <Window.DataContext>
+            <viewModel:MainViewModel/>
+        </Window.DataContext>
+        <Window.Resources>
         <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
             <local:HomeView/>
         </DataTemplate>
@@ -44,7 +42,6 @@
                FontSize="30"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"/>
-
         <Border CornerRadius="10"                    
         BorderThickness="1">
             <Border.BorderBrush>
@@ -56,12 +53,9 @@
             </Border.BorderBrush>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <!--Navigation menu-->
                     <ColumnDefinition Width="250"/>
-                    <!--Content section-->
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <!--Navigation Menu-->
                 <Border CornerRadius="10,0,0,10"
                 Grid.Column="0">
                     <Border.Background>
@@ -71,12 +65,10 @@
                         </LinearGradientBrush>
                     </Border.Background>
                     <StackPanel>
-
-                        <!--Logo-->
+                        <!--лого-->
                         <StackPanel Orientation="Horizontal"
                             Height="35"
                             Margin="15,25,0,40">
-
                             <Image Source="/Assets/Images/ddxlogo.png" Height="30"/>
                             <TextBlock Text="DDX Fitnes club"
                                Foreground="{StaticResource titleColor2}"
@@ -87,19 +79,19 @@
                                Margin="10,0,0,0"/>
                         </StackPanel>
 
-                        <!--Menu Buttons-->
+                        <!--меню кнопок-->
                         <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color1}"
-                             IsChecked="True"
-                             Command="{Binding ShowHomeViewCommand}">
+                                    Tag="{StaticResource color1}"
+                                    IsChecked="True"
+                                    Command="{Binding ShowHomeViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Главное меню" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color2}"
-                             Command="{Binding ShowCustomerViewCommand}">
+                                     Tag="{StaticResource color2}"
+                                     Command="{Binding ShowCustomerViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="UserGroup" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Клиенты" Style="{StaticResource menuButtonText}"/>
@@ -122,19 +114,16 @@
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
-                            Tag="{StaticResource color5}"
-                                     Command="{Binding ShowWorkoutViewCommand}"
-                                            >
-                            
+                                     Tag="{StaticResource color5}"
+                                     Command="{Binding ShowWorkoutViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="CalendarTimes" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Расписание занятий" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
-     Tag="{StaticResource color8}"
-                                     Command="{Binding ShowDocumentViewCommand}"
-     >
+                                     Tag="{StaticResource color8}"
+                                     Command="{Binding ShowDocumentViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Dochub" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Договор" Style="{StaticResource menuButtonText}"/>
@@ -143,8 +132,7 @@
 
                     </StackPanel>
                 </Border>
-
-                <!--Main Section-->
+                <!--Мейн-->
                 <Border CornerRadius="0,10,10,0"
                 Grid.Column="1">
                     <Border.Background>
@@ -155,11 +143,9 @@
                     </Border.Background>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <!--Control bar-->
                             <RowDefinition Height="25"/>
-                            <!--Header / Caption-->
                             <RowDefinition Height="35"/>
-                            <!--Content section / Child views-->
+                            <!--чайлд вью-->
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <StackPanel x:Name="pnlControlBar"
@@ -171,15 +157,15 @@
                             MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
                             MouseEnter="pnlControlBar_MouseEnter">
                             <Button x:Name="btnClose"
-                            Style="{StaticResource controlButton}"
-                            Tag="{StaticResource color4}"
-                            Click="btnClose_Click">
+                                    Style="{StaticResource controlButton}"
+                                    Tag="{StaticResource color4}"
+                                    Click="btnClose_Click">
                                 <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
                             </Button>
                             <Button x:Name="btnMaximize"
-                            Style="{StaticResource controlButton}"
-                            Tag="{StaticResource color6}"
-                            Click="btnMaximize_Click">
+                                    Style="{StaticResource controlButton}"
+                                    Tag="{StaticResource color6}"
+                                    Click="btnMaximize_Click">
                                 <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
                             </Button>
                             <Button x:Name="btnMinimize"
@@ -189,14 +175,12 @@
                                 <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
                             </Button>
                         </StackPanel>
-                        <!--Header / Caption-->
+                        <!--хидер-->
                         <Grid Grid.Row="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-
-                            <!--Caption-->
                             <StackPanel Grid.Column="0"
                                 Orientation="Horizontal"
                                 VerticalAlignment="Top" Margin="0,8,0,0">
@@ -213,16 +197,15 @@
                                    FontWeight="Medium"
                                    VerticalAlignment="Center"/>
                             </StackPanel>
-
-                            <!--User options-->
+                            <!--опции-->
                             <StackPanel Grid.Column="1"
                                 Orientation="Horizontal"
                                 FlowDirection="RightToLeft"
                                 VerticalAlignment="Center"
                                 Margin="0,0,10,0">
                                 <Button Style="{StaticResource iconButton}"
-                                Tag="{StaticResource color1}">
-                                    <fa:IconImage Icon="AngleDown"
+                                        Tag="{StaticResource color1}">
+                                        <fa:IconImage Icon="AngleDown"
                                           Height="12" Width="12"
                                           Style="{StaticResource iconButtonIcon}"/>
                                 </Button>
@@ -240,21 +223,21 @@
                                     </Ellipse.Fill>
                                 </Ellipse>
                                 <Button Style="{StaticResource iconButton}"
-                                Tag="{StaticResource color3}">
-                                    <fa:IconImage Icon="Clock" Style="{StaticResource iconButtonIcon}"/>
+                                        Tag="{StaticResource color3}">
+                                        <fa:IconImage Icon="Clock" Style="{StaticResource iconButtonIcon}"/>
                                 </Button>
                                 <Button Style="{StaticResource iconButton}"
-                                Tag="{StaticResource color4}">
+                                        Tag="{StaticResource color4}">
                                     <fa:IconImage Icon="Envelope" Style="{StaticResource iconButtonIcon}"/>
                                 </Button>
                                 <Button Style="{StaticResource iconButton}"
-                                Tag="{StaticResource color5}">
+                                        Tag="{StaticResource color5}">
                                     <fa:IconImage Icon="Bell" Style="{StaticResource iconButtonIcon}"/>
                                 </Button>
                             </StackPanel>
 
                         </Grid>
-                        <!--Content section / Child views-->
+                        <!--Чайлд вью секшен(юзерконтролеры короче)-->
                         <ContentControl Content="{Binding CurrentChildView}"
                                 Grid.Row="2"
                                 Margin="25"/>

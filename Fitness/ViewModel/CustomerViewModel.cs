@@ -14,5 +14,6 @@ namespace Fitness.ViewModel
 {
     public class CustomerViewModel : ViewModelBase
     {
+
     }
 }

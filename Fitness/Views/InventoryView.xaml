@@ -36,7 +36,6 @@
                              VerticalContentAlignment="Center"
                              Margin="5,5,0,0"></TextBox>
             </StackPanel>
-
             <Button Grid.Column="1"
                                  Click="ButtonSearch_Click"                       
                             Content="Поиск"                            
@@ -74,6 +73,8 @@
                 Background="#200F53"
                 CornerRadius="10" 
                 Padding="10">
+
+            <!--Датагрид-->
             <DataGrid ColumnWidth="*" x:Name="InventoryDG" RowStyle="{DynamicResource DataGridRowStyle1}"  AutoGenerateColumns="False" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}"
                   Background="#200F53"
                   BorderThickness="0">
@@ -93,12 +94,11 @@
                     <DataGridTextColumn Binding="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Кол-во"/>
                     <DataGridTextColumn Binding="{Binding InRepair, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="В ремонте"/>
                     <DataGridTextColumn Binding="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
-
                     <DataGridTemplateColumn Header="Опции" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                   
+
                                     <Button Margin="5 0 0 0" Style="{StaticResource gridEditButton}" Click="ButtonAddPersonnel_Click" >
 
                                         <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource gridButtonIcon}"/>
@@ -113,7 +113,6 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
-
     </Grid>
 </UserControl>
 

@@ -135,8 +135,6 @@ namespace Fitness.ViewModel
             Caption = "Договор";
             Icon = IconChar.Dochub;
         }
-
-
         private void LoadCurrentUserData()
         {
             var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
@@ -149,7 +147,7 @@ namespace Fitness.ViewModel
             else
             {
                 CurrentUserAccount.DisplayName = "Invalid user, not logged in";
-                //Hide child views.
+              
             }
         }
 

@@ -56,16 +56,9 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
-
-
-
                 <Grid Grid.Row="0">
-
                     <Grid.ColumnDefinitions>
-
-
                     </Grid.ColumnDefinitions>
-
                     <TextBlock Text="Добавьте нового клиента"
                                Foreground="DarkGray"
                                FontSize="10"
@@ -73,7 +66,6 @@
                                Grid.Column="0"
                                VerticalAlignment="Center"
                                Margin="10,0,435,0"/>
-
                     <StackPanel x:Name="pnlControlBar"
                     Grid.Row="0"
                     Orientation="Horizontal"
@@ -88,7 +80,6 @@
                     Click="btnClose_Click">
                             <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
                         </Button>
-
                         <Button x:Name="btnMinimize"
                     Style="{StaticResource controlButton}"
                     Tag="{StaticResource color8}"
@@ -107,17 +98,12 @@
                 <TextBox  Text="{Binding ID}" x:Name="IDtxtBox" HorizontalAlignment="Left" Margin="358,11,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="258" Height="20"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White" Margin="10,13,0,0" Grid.Row="1" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,198,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Специальность" VerticalAlignment="Top" Width="133" Height="16"/>
-             
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,166,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Стаж" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,135,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Зарплата" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,105,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Номер телефона" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,75,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Почта" VerticalAlignment="Top" Width="133" Height="16"/>
                 <TextBlock HorizontalAlignment="Left" Foreground="White"  Margin="10,45,0,0" Grid.Row="1" TextWrapping="Wrap" Text="ФИО" VerticalAlignment="Top" Width="133" Height="16"/>
-
             </Grid>
-
         </Border>
-
     </Border>
-
 </Window>

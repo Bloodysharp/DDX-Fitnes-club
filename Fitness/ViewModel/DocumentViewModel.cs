@@ -9,5 +9,6 @@ namespace Fitness.ViewModel
 {
     public class DocumentViewModel : ViewModelBase
     {
+
     }
 }

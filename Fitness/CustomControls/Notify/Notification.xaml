@@ -12,16 +12,13 @@
         Background="Transparent"
         Topmost="True"
         WindowStyle="None"
-        Loaded="Window_Loaded"
-        >
-
+        Loaded="Window_Loaded">
     <Window.Resources>
         <!--  || Gradient ||  -->
         <LinearGradientBrush x:Key="RedGradient" StartPoint="0,0" EndPoint="1,0">
             <GradientStop Offset="0" Color="#602D30" />
             <GradientStop Offset="0.4" Color="#20232E" />
         </LinearGradientBrush>
-
         <Storyboard x:Key="CloseButtonFadeInAnimation" >
             <DoubleAnimation
                 AutoReverse="False"
@@ -30,11 +27,8 @@
                 Storyboard.TargetProperty="Opacity"
                 From="0"
                 To="1"
-                Duration="0:0:0.3"
-                />
+                Duration="0:0:0.3"/>
         </Storyboard>
-
-
         <Storyboard x:Key="CloseButtonFadeOutAnimation" >
             <DoubleAnimation
                 AutoReverse="False"
@@ -46,8 +40,6 @@
                 Duration="0:0:0.3"
                 />
         </Storyboard>
-
-
         <Storyboard x:Key="WindowSlideInAnimation" Completed="WindowSlideInAnimation_Completed">
             <ThicknessAnimation
                 Storyboard.TargetName="_Border"
@@ -57,8 +49,6 @@
                 Duration="0:0:0.5"
                 ></ThicknessAnimation>
         </Storyboard>
-
-
         <Storyboard x:Key="WindowSlideOutAnimation" Completed="WindowSlideOutAnimation_Completed">
             <ThicknessAnimation
               Storyboard.TargetName="_Border"
@@ -68,8 +58,6 @@
               Duration="0:0:0.5"
               ></ThicknessAnimation>
         </Storyboard>
-
-
         <Storyboard x:Key="RectangleWidthDecreaseAnimation" Completed="Storyboard_Completed">
             <DoubleAnimation
                 AutoReverse="False"
@@ -81,11 +69,7 @@
                 Duration="0:0:6"
                 />
         </Storyboard>
-
-
     </Window.Resources>
-
-
     <Border
         x:Name="_Border"
         d:Background="{StaticResource RedGradient}"
@@ -100,7 +84,6 @@
                     Source="{Binding ImagePath}"
                     d:Source="/Assets/Images/Error_Icon.png"
                     Stretch="Fill" />
-
                 <StackPanel Margin="0,3,0,0">
                     <TextBlock
                         FontFamily="#Poppins"
@@ -109,17 +92,15 @@
                         Foreground="#F4F4F4"
                         d:Text="Error !"
                         Text="{Binding Header}" />
-
                     <TextBlock
                         FontFamily="#Poppins"
                         FontSize="11"
                         FontWeight="Light"
                         Foreground="#F4F4F4"
                         d:Text="An Unexpected Problem has occured."
-                        Text="{Binding Message}"
-                        />
-                </StackPanel>
+                        Text="{Binding Message}" Width="278" Height="23"/>
 
+                </StackPanel>
                 <!--<Image
                     x:Name="_Close"
                     Width="39"
@@ -130,8 +111,6 @@
                     MouseDown="_Close_MouseDown"
                     Opacity="0"
                     />-->
-
-
             </StackPanel>
             <Rectangle
                 x:Name="_Rectangle"
@@ -139,8 +118,7 @@
                 Height="4"
                 HorizontalAlignment="Left"
                 d:Fill="#F24A50"
-                Fill="{Binding RecFill}"
-                />
+                Fill="{Binding RecFill}"/>
         </StackPanel>
     </Border>
 </Window>

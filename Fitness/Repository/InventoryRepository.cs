@@ -11,17 +11,14 @@ namespace Fitness.Repository
     public class InventoryRepository
     {
         private readonly string _connectionString;
-
         public InventoryRepository(string connectionString)
         {
             _connectionString = connectionString;
         }
-
         private SqlConnection GetConnection()
         {
             return new SqlConnection(_connectionString);
         }
-
         public List<InventoryModel> GetAllInventory()
         {
             var inventory = new List<InventoryModel>();
@@ -45,8 +42,6 @@ namespace Fitness.Repository
                             Quantity = reader["Quantity"] != DBNull.Value ? Convert.ToInt32(reader["Quantity"]) : 0,
                             InRepair = reader["InRepair"] != DBNull.Value ? Convert.ToInt32(reader["InRepair"]) : 0,
                             Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : 0.0m
-
-
                         });
                     }
                 }

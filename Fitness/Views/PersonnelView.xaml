@@ -37,8 +37,7 @@
                              Margin="5,5,0,0"></TextBox>
             </StackPanel>
             <Button Grid.Column="1"
-                    Click="ButtonSearch_Click"
-                                       
+                    Click="ButtonSearch_Click"     
                             Content="Поиск"                            
                             FontSize="12"
                             FontFamily="Montserrat"
@@ -98,9 +97,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    
                                     <Button Margin="5 0 0 0" Style="{StaticResource gridEditButton}" Click="ButtonAddPersonnel_Click" >
-
                                         <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                     <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" Click="ButtonRemoveTrainers_Click" >
@@ -113,6 +110,5 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
-
     </Grid>
 </UserControl>
